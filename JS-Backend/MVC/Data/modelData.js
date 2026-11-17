@@ -1,0 +1,1 @@
+export const modelData=`// This is just a model file for Database purposes.`;
