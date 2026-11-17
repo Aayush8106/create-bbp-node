@@ -1,0 +1,6 @@
+.git/
+.gitignore
+.gitattributes
+.github/
+.vscode/
+node_modules/
