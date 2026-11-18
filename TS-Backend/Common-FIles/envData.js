@@ -1,0 +1,1 @@
+export const envData = `PORT=3000`;

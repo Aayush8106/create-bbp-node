@@ -1,0 +1,1 @@
+export const tsModel =  '// This is model file for db operations.';

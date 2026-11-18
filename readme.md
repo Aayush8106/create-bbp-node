@@ -1,22 +1,26 @@
-# Create BBP Node
+# Create BBP (Backend Boiler-Plate) Node
 
-A Node.js CLI tool that helps developers quickly scaffold backend projects using **Normal** or **MVC architecture**.
-
-Instead of manually creating folders and files, simply run the CLI command, choose your preferred architecture, and get a ready-to-use Node.js backend boilerplate.
+A CLI tool to quickly generate Node.js backend boilerplates using **JavaScript or TypeScript**, with support for **Normal and MVC architectures**, including Socket.IO integration.
 
 ## Features
 
-- Quickly generate a Node.js backend project.
+- Choose between JavaScript and TypeScript.
 - Choose between Normal and MVC architecture.
-- Automatically creates the required folders and files.
-- Automatically generates `package.json`.
-- Installs required dependencies automatically.
-- Uses Express.js and dotenv.
-- Simple interactive command-line interface.
+- Generate projects with or without Socket.IO.
+- Automatically creates the required folder structure and files.
+- Automatically installs the required dependencies.
+- TypeScript configuration with strict type checking.
+- Environment variable support using dotenv.
+- Ready-to-use Express server.
 
-## Installation and Usage
+## Getting Started
 
-You don't need to install the package globally.
+### Requirements
+
+- [Node.js](https://nodejs.org/)
+- npm
+
+### Create a Backend Project
 
 Run the following command in your terminal:
 
@@ -24,13 +28,42 @@ Run the following command in your terminal:
 npm create bbp-node
 ```
 
-Choose your preferred project structure from the interactive menu.
+The CLI will ask you to select:
 
-### 1. Normal Architecture
+1. **Language**
+   - JavaScript
+   - TypeScript
 
-Select **Normal** to generate a simple backend structure.
+2. **Architecture**
+   - Normal
+   - MVC
 
-Generated structure:
+3. **Backend Option**
+   - Normal Backend
+   - Normal + Socket.IO
+   - MVC Backend
+   - MVC + Socket.IO
+
+After selecting your options, the CLI automatically generates your backend project and installs its dependencies.
+
+## Available Templates
+
+| Language | Architecture | Socket.IO |
+|---|---|---|
+| JavaScript | Normal | No |
+| JavaScript | Normal | Yes |
+| JavaScript | MVC | No |
+| JavaScript | MVC | Yes |
+| TypeScript | Normal | No |
+| TypeScript | Normal | Yes |
+| TypeScript | MVC | No |
+| TypeScript | MVC | Yes |
+
+## Project Structures
+
+### 1. Normal Backend
+
+A simple Express backend with a single server file.
 
 ```text
 project/
@@ -39,17 +72,50 @@ project/
 └── package.json
 ```
 
-### 2. MVC Architecture
-
-Select **MVC** to generate a backend project following the Model-View-Controller architectural pattern.
-
-Generated structure:
+For TypeScript:
 
 ```text
 project/
-├── routes/
-│   └── index.js
+├── src/
+│   └── server.ts
+├── compiled/
+├── .env
+├── package.json
+└── tsconfig.json
+```
+
+### 2. Normal + Socket.IO
+
+A simple Express backend with Socket.IO integration.
+
+```text
+project/
+├── server.js
+├── .env
+└── package.json
+```
+
+For TypeScript:
+
+```text
+project/
+├── src/
+│   └── server.ts
+├── compiled/
+├── .env
+├── package.json
+└── tsconfig.json
+```
+
+### 3. MVC Backend
+
+A structured backend following the Model-View-Controller architecture.
+
+```text
+project/
 ├── controllers/
+│   └── index.js
+├── routes/
 │   └── index.js
 ├── models/
 │   └── index.js
@@ -58,40 +124,131 @@ project/
 └── package.json
 ```
 
+For TypeScript:
+
+```text
+project/
+├── src/
+│   ├── controllers/
+│   │   └── index.ts
+│   ├── routes/
+│   │   └── index.ts
+│   ├── models/
+│   │   └── index.ts
+│   └── server.ts
+├── compiled/
+├── .env
+├── package.json
+└── tsconfig.json
+```
+
+### 4. MVC + Socket.IO
+
+MVC architecture with Socket.IO integration and a separate socket handler.
+
+```text
+project/
+├── controllers/
+│   └── index.js
+├── routes/
+│   └── index.js
+├── models/
+│   └── index.js
+├── socket/
+│   └── index.js
+├── server.js
+├── .env
+└── package.json
+```
+
+For TypeScript:
+
+```text
+project/
+├── src/
+│   ├── controllers/
+│   │   └── index.ts
+│   ├── routes/
+│   │   └── index.ts
+│   ├── models/
+│   │   └── index.ts
+│   ├── socket/
+│   │   └── index.ts
+│   └── server.ts
+├── compiled/
+├── .env
+├── package.json
+└── tsconfig.json
+```
+
 ## Running the Project
 
-After the CLI finishes generating the project and installing dependencies, navigate to your generated project folder and run:
+After generating your backend, navigate to the generated project directory.
+
+### JavaScript
+
+Start the server:
 
 ```bash
 npm start
 ```
 
-Your backend server will start on the configured port (default: 3000).
+### TypeScript
+
+Run the development server with automatic restarting:
+
+```bash
+npm run dev
+```
+
+Build TypeScript into JavaScript:
+
+```bash
+npm run build
+```
+
+Run the compiled JavaScript:
+
+```bash
+npm start
+```
+
+## TypeScript Scripts
+
+The generated TypeScript projects include:
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Starts the development server using tsx watch |
+| `npm run build` | Compiles TypeScript using tsc |
+| `npm start` | Runs the compiled JavaScript server |
 
 ## Technologies Used
 
 - Node.js
 - Express.js
 - JavaScript
-- npm
-- @inquirer/prompts
+- TypeScript
+- Socket.IO
 - dotenv
-
-## Requirements
-
-- Node.js installed
-- npm installed
+- npm
 
 ## Contributing
 
-Contributions, suggestions, and bug reports are welcome!
+Contributions, suggestions, and improvements are welcome!
 
-If you find an issue or have an idea for improvement, feel free to open an issue or submit a pull request.
+If you find a bug or have an idea for a new feature, contact me at:
 
-## Author
-
-**Aayush Patel**
+**Email:** aayushp8106@gmail.com
 
 ## License
 
-ISC
+This project is licensed under the ISC License.
+
+## Author
+
+**Create BBP Node**
+
+**GitHub:** https://github.com/Aayush8106/create-bbp-node
+
+**npm:** https://www.npmjs.com/package/create-bbp-node

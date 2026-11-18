@@ -1,4 +1,4 @@
-const mvcServerData = `import express from 'express';
+export const mvcServerData = `import express from 'express';
 import dotenv from 'dotenv';
 import { createServer } from 'node:http';
 import { Server } from 'socket.io';
@@ -26,5 +26,3 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(\`Server is live at Port: \${PORT}\`);
 });`;
-
-export default mvcServerData;

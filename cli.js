@@ -3,6 +3,7 @@
 
 import { select } from "@inquirer/prompts";
 import jsArchitecture from "./JS-Backend/Functions/jsArchitecture.js";
+import tsArchitecture from "./TS-Backend/Functions/tsArchitecture.js";
 
 const language = await select({
     message : "Choose your language:",
@@ -15,5 +16,5 @@ const language = await select({
 if(language == 'js'){
     jsArchitecture();
 }else{
-    console.log('coming soon...');
+    tsArchitecture();
 }

@@ -1,0 +1,9 @@
+export const srcPackageData = `{
+  "name": "my-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js"
+  }
+}
+`;
